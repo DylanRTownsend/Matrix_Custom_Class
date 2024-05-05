@@ -1,5 +1,9 @@
 IMatrix, a custom class for easily creating Matrices of varying sizes and types.
 
+How to use:
+
+Copy the class to it's own script in Unity, or to another script. For usage examples, check out the MatrixTests.cs
+
 Includes:
 
 - Generic Type for any variable type usage
