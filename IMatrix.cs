@@ -70,7 +70,7 @@ public class IMatrix<T> : IEnumerable<T>
 
 
     //Function to quickly create a string table of values
-    public string MatrixToTableString(string delimiter = "", bool skipTop = false)
+    public string MatrixToTableString(string delimiter = "", bool skipTop = true)
     {
         StringBuilder stringBuild = new StringBuilder();
 
@@ -153,11 +153,13 @@ public class IMatrix<T> : IEnumerable<T>
     //Matrix Multiplication
     public IMatrix<int> MatriceMultiplication(IMatrix<int> mat)
     {
+
         //Ensure class instance type matches Matrix Passed In
-        if (data.GetType() != typeof(int))
+        if (data.GetType().GetElementType() != typeof(int))
         {
             return null;
         }
+        
 
         //Get Our data sets
         int[,] A = data as int[,];
@@ -203,7 +205,7 @@ public class IMatrix<T> : IEnumerable<T>
     public IMatrix<float> MatriceMultiplication(IMatrix<float> mat)
     {
         //Ensure class instance type matches Matrix Passed In
-        if (data.GetType() != typeof(float))
+        if (data.GetType().GetElementType() != typeof(float))
         {
             return null;
         }
@@ -252,7 +254,7 @@ public class IMatrix<T> : IEnumerable<T>
     public IMatrix<double> MatriceMultiplication(IMatrix<double> mat)
     {
         //Ensure class instance type matches Matrix Passed In
-        if (data.GetType() != typeof(double))
+        if (data.GetType().GetElementType() != typeof(double))
         {
             return null;
         }
@@ -303,7 +305,7 @@ public class IMatrix<T> : IEnumerable<T>
     public IMatrix<float> MatriceAddition(IMatrix<float> mat)
     {
         //Ensure both types are types that we can use for arithmetic operations 
-        if (data.GetType() != typeof(float)) { return null; }
+        if (data.GetType().GetElementType() != typeof(float)) { return null; }
 
         // Define matrices A and B
         float[,] A = data as float[,];
@@ -344,7 +346,7 @@ public class IMatrix<T> : IEnumerable<T>
     public IMatrix<int> MatriceAddition(IMatrix<int> mat)
     {
         //Ensure both types are types that we can use for arithmetic operations 
-        if (data.GetType() != typeof(int)) { return null; }
+        if (data.GetType().GetElementType() != typeof(int)) { return null; }
 
         // Define matrices A and B
         int[,] A = data as int[,];
@@ -385,7 +387,7 @@ public class IMatrix<T> : IEnumerable<T>
     public IMatrix<double> MatriceAddition(IMatrix<double> mat)
     {
         //Ensure both types are types that we can use for arithmetic operations 
-        if (data.GetType() != typeof(double)) { return null; }
+        if (data.GetType().GetElementType() != typeof(double)) { return null; }
 
         // Define matrices A and B
         double[,] A = data as double[,];
@@ -428,7 +430,7 @@ public class IMatrix<T> : IEnumerable<T>
     public IMatrix<int> MatriceSubtraction(IMatrix<int> mat)
     {
         //Ensure both types are types that we can use for arithmetic operations 
-        if (data.GetType() != typeof(int)) { return null; }
+        if (data.GetType().GetElementType() != typeof(int)) { return null; }
 
         // Define matrices A and B
         int[,] A = data as int[,];
@@ -469,7 +471,7 @@ public class IMatrix<T> : IEnumerable<T>
     public IMatrix<float> MatriceSubtraction(IMatrix<float> mat)
     {
         //Ensure both types are types that we can use for arithmetic operations 
-        if (data.GetType() != typeof(float)) { return null; }
+        if (data.GetType().GetElementType() != typeof(float)) { return null; }
 
         // Define matrices A and B
         float[,] A = data as float[,];
@@ -510,7 +512,7 @@ public class IMatrix<T> : IEnumerable<T>
     public IMatrix<double> MatriceSubtraction(IMatrix<double> mat)
     {
         //Ensure both types are types that we can use for arithmetic operations 
-        if (data.GetType() != typeof(double)) { return null; }
+        if (data.GetType().GetElementType() != typeof(double)) { return null; }
 
         // Define matrices A and B
         double[,] A = data as double[,];
